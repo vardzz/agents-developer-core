@@ -21,6 +21,7 @@ The team is orchestrated by a central coordinator and comprises specialized engi
 | **White-Hat Ethical Hacker** | Performs offense-oriented code auditing, threat modeling, and OWASP vulnerability detection. | [ethical_hacker.md](file:///c:/Projects-Personal/agents-developer-core/agents/ethical_hacker.md) |
 | **Application Security Specialist** | Leads defensive hardening, input validation, encryption, and patches vulnerability loopholes. | [security_specialist.md](file:///c:/Projects-Personal/agents-developer-core/agents/security_specialist.md) |
 | **Director of Quality Assurance (QA)** | Enforces world-class coding standards, error resilience, and edge-case testing validation. | [qa_officer.md](file:///c:/Projects-Personal/agents-developer-core/agents/qa_officer.md) |
+| **Senior Code Checker & Static Analysis Expert** | Evaluates raw source code structures, variables, component reuse, and AST optimization pathways. | [code_checker.md](file:///c:/Projects-Personal/agents-developer-core/agents/code_checker.md) |
 | **Lead Documentation & Commentary** | Reviews and writes clear, contextual, and intent-driven code documentation. | [commentator.md](file:///c:/Projects-Personal/agents-developer-core/agents/commentator.md) |
 
 ---
@@ -44,9 +45,9 @@ When a development request is received, the **Supreme System Orchestrator** mana
 graph TD
     User([User Request]) --> Orch[Supreme System Orchestrator]
     Orch --> Arch[1. Architecture Plan]
-    Arch --> Del[2. Delegation to Backend/Frontend/DevOps]
+    Orch --> Del[2. Delegation to Backend/Frontend/DevOps]
     Del --> Sec[3. Security & Audit Loop: Ethical Hacker & Security Specialist]
-    Sec --> QA[4. Quality Control: QA Officer]
+    Sec --> QA[4. Quality Control: QA Officer & Code Checker]
     QA --> Doc[5. Documentation Polish: Commentator]
     Doc --> Final([6. Final Delivery to User])
 ```
@@ -54,7 +55,7 @@ graph TD
 1. **Architecture Plan**: The Orchestrator digests the requirements and drafts a technical execution plan.
 2. **Delegation**: Engineering tasks are routed using the specialized syntax: `[@AgentName with /skills/SkillName]`.
 3. **Security & Audit**: The implementation is checked by the Ethical Hacker for vulnerabilities, and corrected/hardened by the Security Specialist.
-4. **Quality Control**: The QA Officer verifies type compliance, edge cases, and code standards.
+4. **Quality Control**: The QA Officer and Code Checker verify type compliance, code standards, AST optimizations, and edge-cases.
 5. **Documentation**: The Commentator ensures all code comments and headers are pristine.
 6. **Delivery**: The user receives the fully-vetted, production-grade output.
 
