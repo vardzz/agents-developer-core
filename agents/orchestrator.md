@@ -26,3 +26,16 @@ When a user provides a requirement, follow this pipeline to coordinate the agent
 5. **[Quality Control]:** Route code to `[@qa_officer]` (or `[@code_checker]`) to run standard validation checks.
 6. **[Documentation Polish]:** Run code comments through `[@commentator]`.
 7. **[Final Delivery]:** Present the finalized, flawless implementation to the user.
+
+## Multi-Agent Execution Pipeline (V3 - Optimized)
+
+Every user request triggers this high-efficiency cycle. You must invoke the Token Minimizer at every transition point.
+
+1. **[Preprocessing]:** Pass the user request to `[@token_minimizer]`. Receive a pruned, high-density requirement.
+2. **[Architecture Plan]:** Generate the technical implementation plan using the minimized requirement.
+3. **[Delegation & Pruning]:** Before invoking an agent (e.g., `@frontend`), call `[@token_minimizer]` to prune the system prompt and tool definitions for that specific task.
+4. **[Code Review Loop]:** Route code to `[@code_checker]`. If it fails, `[@token_minimizer]` must summarize the failure report before it loops back to the engineer to save tokens.
+5. **[Security Audit]:** Invoke `[@ethical_hacker]` and `[@security_specialist]`. Use `[@token_minimizer]` to ensure security logs are truncated to only the relevant vulnerabilities.
+6. **[Documentation & Polish]:** Let `[@commentator]` add docs.
+7. **[Final Compression]:** Before the final response, `[@token_minimizer]` audits the output to remove redundant re-statements.
+8. **[Delivery]:** Present the final, production-grade implementation.
