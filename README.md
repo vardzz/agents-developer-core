@@ -15,6 +15,7 @@ The team is orchestrated by a central coordinator and comprises specialized engi
 | Agent | Description & Context | File Link |
 | :--- | :--- | :--- |
 | **Supreme System Orchestrator** | Central brain & workflow router. Manages state, delegates tasks, and acts as the single point of contact. | [orchestrator.md](file:///c:/Projects-Personal/agents-developer-core/agents/orchestrator.md) |
+| **Context Architect & Token Optimization Expert** | Audits interactions, prunes system prompts/tools, and compresses logs/history to minimize token overhead. | [token_minimizer.md](file:///c:/Projects-Personal/agents-developer-core/agents/token_minimizer.md) |
 | **Senior Backend Engineer** | Designs core application logic, data architecture, and high-performance server-side engines. | [backend.md](file:///c:/Projects-Personal/agents-developer-core/agents/backend.md) |
 | **Master Frontend Engineer** | Builds atomic, accessible, and ultra-performant client-side UI/UX component architectures. | [frontend.md](file:///c:/Projects-Personal/agents-developer-core/agents/frontend.md) |
 | **Cloud DevOps Engineer** | Oversees CI/CD pipelines, containerization, environment configs, and infrastructure validation. | [devops.md](file:///c:/Projects-Personal/agents-developer-core/agents/devops.md) |
@@ -37,27 +38,31 @@ Skills provide standardized checklists and guardrails ensuring consistency, perf
 
 ---
 
-## 🔄 Multi-Agent Execution Pipeline
+## 🔄 Multi-Agent Execution Pipeline (Optimized)
 
-When a development request is received, the **Supreme System Orchestrator** manages the workflow across the engineering lifecycle:
+When a development request is received, the **Supreme System Orchestrator** manages the workflow across the engineering lifecycle, invoking the **Token Minimizer** at transition points for resource efficiency:
 
 ```mermaid
 graph TD
-    User([User Request]) --> Orch[Supreme System Orchestrator]
-    Orch --> Arch[1. Architecture Plan]
-    Orch --> Del[2. Delegation to Backend/Frontend/DevOps]
-    Del --> Sec[3. Security & Audit Loop: Ethical Hacker & Security Specialist]
-    Sec --> QA[4. Quality Control: QA Officer & Code Checker]
-    QA --> Doc[5. Documentation Polish: Commentator]
-    Doc --> Final([6. Final Delivery to User])
+    User([User Request]) --> TM_Pre[1. Preprocessing: Token Minimizer]
+    TM_Pre --> Orch[Supreme System Orchestrator]
+    Orch --> Arch[2. Architecture Plan]
+    Orch --> TM_Prune[3. Pruning: Token Minimizer]
+    TM_Prune --> Del[Delegation to Specialists]
+    Del --> QA[4. Review: Code Checker / QA]
+    QA -- Fail --> TM_Fail[Minimizer Summarization] --> Orch
+    QA -- Pass --> Sec[5. Security Audit]
+    Sec --> TM_Sec[Minimizer Log Truncation] --> Doc[6. Documentation: Commentator]
+    Doc --> TM_Final[7. Final Compression: Token Minimizer] --> Final([Delivery to User])
 ```
 
-1. **Architecture Plan**: The Orchestrator digests the requirements and drafts a technical execution plan.
-2. **Delegation**: Engineering tasks are routed using the specialized syntax: `[@AgentName with /skills/SkillName]`.
-3. **Security & Audit**: The implementation is checked by the Ethical Hacker for vulnerabilities, and corrected/hardened by the Security Specialist.
-4. **Quality Control**: The QA Officer and Code Checker verify type compliance, code standards, AST optimizations, and edge-cases.
-5. **Documentation**: The Commentator ensures all code comments and headers are pristine.
-6. **Delivery**: The user receives the fully-vetted, production-grade output.
+1. **Preprocessing**: The user request is passed to the Token Minimizer to generate a pruned, high-density requirement.
+2. **Architecture Plan**: The Orchestrator digests the requirements and drafts a technical execution plan.
+3. **Delegation & Pruning**: Before invoking specialized agents (e.g., `@backend`), the Token Minimizer prunes system prompts and tool definitions. Tasks are routed using: `[@AgentName with /skills/SkillName]`.
+4. **Loopback Handling & Review**: The Code Checker and QA verify the output. If it fails, the Token Minimizer summarizes the failure logs to save context tokens before looping back to the developer agent.
+5. **Security Audit**: Ethical Hacker and Security Specialist inspect the code. Security logs are truncated by the Token Minimizer to isolate relevant vulnerabilities.
+6. **Documentation**: The Commentator ensures code comments and docs are complete and polished.
+7. **Final Compression & Delivery**: The Token Minimizer removes redundant explanations/re-statements before presenting the final, production-grade implementation.
 
 ---
 
