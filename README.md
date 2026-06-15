@@ -90,7 +90,7 @@ To embed your agent repository directly inside another project without duplicati
 2. Run the following command:
    ```bash
    # Add this agent repo as a submodule inside a folder called 'ai-core'
-   git submodule add https://github.com/your-username/agents-developer-core.git ai-core
+   git submodule add https://github.com/vardzz/agents-developer-core.git ai-core
    ```
    *This creates an `ai-core/` directory within your project pointing directly to your central repository.*
 
